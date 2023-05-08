@@ -11,6 +11,7 @@ for build in ${BUILDS[@]}; do
         --build-arg grpc_java=${GRPC_JAVA_VERSION} \
         --build-arg grpc_web=${GRPC_WEB_VERSION} \
         --build-arg buf_version=${BUF_VERSION} \
+        --build-arg scalapb_version=${SCALAPB_VERSION} \
         --target ${build} \
         .
 

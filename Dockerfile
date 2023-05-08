@@ -5,7 +5,7 @@ ARG grpc
 ARG grpc_java
 ARG buf_version
 ARG grpc_web
-
+ARG scalapb_version
 
 
 # Pure go binaries
@@ -60,12 +60,14 @@ ARG grpc
 ARG grpc_java
 ARG buf_version
 ARG grpc_web
+ARG scalapb_version
 
 # TIL docker arg variables need to be redefined in each build stage
 ARG grpc
 ARG grpc_java
 ARG grpc_web
 ARG buf_version
+ARG scalapb_version
 
 # Parallel cmake
 ENV CMAKE_BUILD_PARALLEL_LEVEL=8
@@ -122,8 +124,8 @@ WORKDIR /tmp
 
 
 # Add scala support
-RUN curl -LO https://github.com/scalapb/ScalaPB/releases/download/v0.9.6/protoc-gen-scala-0.9.6-linux-x86_64.zip \
-    && unzip protoc-gen-scala-0.9.6-linux-x86_64.zip \
+RUN curl -LO https://github.com/scalapb/ScalaPB/releases/download/v${scalapb_version/protoc-gen-scala-${scalapb_version-linux-x86_64.zip \
+    && unzip protoc-gen-scala-${scalapb_version-linux-x86_64.zip \
     && chmod +x /tmp/protoc-gen-scala
 
 # Add grpc-web support
